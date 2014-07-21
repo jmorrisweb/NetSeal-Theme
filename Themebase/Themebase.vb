@@ -12,7 +12,7 @@ Imports System.Drawing.Imaging
 'Version: 1.5.4
 '------------------
 
-Public MustInherit Class ThemeContainer154
+Public MustInherit Class ThemeContainer
     Inherits ContainerControl
 
 #Region " Initialization "
@@ -1093,7 +1093,7 @@ Public MustInherit Class ThemeContainer154
 
 End Class
 
-Public MustInherit Class ThemeControl154
+Public MustInherit Class ThemeControl
     Inherits Control
 
 

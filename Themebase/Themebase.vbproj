@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9AC0DBA8-D5A3-4121-817C-5A0D2D3378B4}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Aeonhack</RootNamespace>
+    <RootNamespace>Themebase</RootNamespace>
     <AssemblyName>Themebase</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>

@@ -6,7 +6,7 @@ Imports System.Drawing.Text
 Imports System.ComponentModel
 Imports System.Collections.Generic
 Imports System.Text
-Imports Aeonhack
+Imports Themebase
 'IMPORTANT:
 'Please leave these comments in place as they help protect intellectual rights and allow
 'developers to determine the version of the theme they are using. The preffered method
@@ -63,7 +63,7 @@ Module ThemeModule
 End Module
 
 Public Class NSTheme
-    Inherits ThemeContainer154
+    Inherits ThemeContainer
 
     Private _AccentOffset As Integer = 42
     Public Property AccentOffset() As Integer
