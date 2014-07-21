@@ -7,6 +7,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "THEMEFIX", "THEMEFIX\THEMEF
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Net Seal Theme", "Net Seal Theme\Net Seal Theme.vbproj", "{80687E6B-4055-4976-A90F-1BC2026F37CC}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Themebase", "Themebase\Themebase.vbproj", "{9AC0DBA8-D5A3-4121-817C-5A0D2D3378B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{80687E6B-4055-4976-A90F-1BC2026F37CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80687E6B-4055-4976-A90F-1BC2026F37CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80687E6B-4055-4976-A90F-1BC2026F37CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AC0DBA8-D5A3-4121-817C-5A0D2D3378B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AC0DBA8-D5A3-4121-817C-5A0D2D3378B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AC0DBA8-D5A3-4121-817C-5A0D2D3378B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AC0DBA8-D5A3-4121-817C-5A0D2D3378B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

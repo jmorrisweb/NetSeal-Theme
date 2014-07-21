@@ -86,19 +86,23 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="ThemeBase.vb">
+    <Compile Include="Theme\NSHScrollBar.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Theme\NSColorTable.vb" />
+    <Compile Include="Theme\NSContextMenu.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Theme\NSListView.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Theme\List View Editor\NSListView_Items_Editor_Dialog.Designer.vb">
+    <Compile Include="Theme\List View Editor %27Don%27t worry about this\NSListView_Items_Editor_Dialog.Designer.vb">
       <DependentUpon>NSListView_Items_Editor_Dialog.vb</DependentUpon>
     </Compile>
-    <Compile Include="Theme\List View Editor\NSListView_Items_Editor_Dialog.vb">
+    <Compile Include="Theme\List View Editor %27Don%27t worry about this\NSListView_Items_Editor_Dialog.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Theme\List View Editor\Stepitup.vb" />
+    <Compile Include="Theme\List View Editor %27Don%27t worry about this\Stepitup.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -107,7 +111,7 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Theme\List View Editor\NSListView_Items_Editor_Dialog.resx">
+    <EmbeddedResource Include="Theme\List View Editor %27Don%27t worry about this\NSListView_Items_Editor_Dialog.resx">
       <DependentUpon>NSListView_Items_Editor_Dialog.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
@@ -121,6 +125,12 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Themebase\Themebase.vbproj">
+      <Project>{9ac0dba8-d5a3-4121-817c-5a0d2d3378b4}</Project>
+      <Name>Themebase</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

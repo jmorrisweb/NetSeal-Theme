@@ -3,15 +3,14 @@ Imports System.ComponentModel
 Imports System.Windows.Forms.Design
 Imports System.Windows.Forms
 
+''Learning about UITypeEditor's, going to implement a custom editor.
 Public Class BorderStyleEditor
     Inherits UITypeEditor
 
-    ' Indicate that we display a dropdown.
     Public Overrides Function GetEditStyle(ByVal context As ITypeDescriptorContext) As UITypeEditorEditStyle
         Return UITypeEditorEditStyle.Modal
     End Function
 
-    ' Edit a line style
     Public Overrides Function EditValue(ByVal context As ITypeDescriptorContext, ByVal provider As IServiceProvider, ByVal value As Object) As Object
         Dim editor_service As IWindowsFormsEditorService = CType(provider.GetService(GetType(IWindowsFormsEditorService)), IWindowsFormsEditorService)
         If editor_service Is Nothing Then
@@ -25,7 +24,6 @@ Public Class BorderStyleEditor
         End If
     End Function
 
-    ' Indicate that we draw values in the Properties window.
     Public Overrides Function GetPaintValueSupported( _
         ByVal context As ITypeDescriptorContext) As Boolean
 
@@ -33,7 +31,6 @@ Public Class BorderStyleEditor
 
     End Function
 
-    ' Draw a BorderStyles value.
     Public Overrides Sub PaintValue(ByVal e As PaintValueEventArgs)
 
     End Sub
