@@ -126,7 +126,7 @@
       <Name>Net Seal Theme</Name>
     </ProjectReference>
     <ProjectReference Include="..\Themebase\Themebase.vbproj">
-      <Project>{9AC0DBA8-D5A3-4121-817C-5A0D2D3378B4}</Project>
+      <Project>{9ac0dba8-d5a3-4121-817c-5a0d2d3378b4}</Project>
       <Name>Themebase</Name>
     </ProjectReference>
   </ItemGroup>

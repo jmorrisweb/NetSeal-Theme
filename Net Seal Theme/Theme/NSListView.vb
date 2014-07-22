@@ -313,15 +313,18 @@ Public Class NSListView
             ItemHeight = TextHeight
         End If
         If VS IsNot Nothing Then
-            If VS.Maximum <> (_Items.Count * ItemHeight) Then
-                VS.Maximum = (_Items.Count * ItemHeight)
+            If _Items.Count > 0 Then
+                If VS.Maximum <> (_Items.Count * ItemHeight) Then
+                    VS.Maximum = (_Items.Count * ItemHeight)
+                End If
+                If VS.SmallChange <> ItemHeight Then
+                    'VS.SmallChange = ItemHeight
+                End If
+                If VS.LargeChange <> ItemHeight Then
+                    'VS.LargeChange = ItemHeight
+                End If
             End If
-            If VS.SmallChange <> ItemHeight Then
-                VS.SmallChange = ItemHeight
-            End If
-            If VS.LargeChange <> ItemHeight Then
-                VS.LargeChange = ItemHeight
-            End If
+
         End If
         G = e.Graphics
         G.TextRenderingHint = TextRenderingHint.ClearTypeGridFit
@@ -375,12 +378,16 @@ Public Class NSListView
             If CI.ImageList IsNot Nothing And CI.ImageList Is Me.SmallImageList Then
                 Y2 = R1.Y + CInt((ItemHeight / 2) - (CI.ImageList.ImageSize.Height / 2)) - 1
                 If CI.ImageIndex <> -1 Then
-                    G.DrawImage(CI.ImageList.Images(CI.ImageIndex), New Point(3, Y2))
-                    X2 = CI.ImageList.ImageSize.Width + 6
+                    If CI.ImageList.Images(CI.ImageIndex) IsNot Nothing Then
+                        G.DrawImage(CI.ImageList.Images(CI.ImageIndex), New Point(3, Y2))
+                        X2 = CI.ImageList.ImageSize.Width + 6
+                    End If
                 End If
                 If CI.ImageKey <> String.Empty Then
-                    G.DrawImage(CI.ImageList.Images(CI.ImageKey), New Point(3, Y2))
-                    X2 = CI.ImageList.ImageSize.Width + 6
+                    If CI.ImageList.Images(CI.ImageKey) IsNot Nothing Then
+                        G.DrawImage(CI.ImageList.Images(CI.ImageKey), New Point(3, Y2))
+                        X2 = CI.ImageList.ImageSize.Width + 6
+                    End If
                 End If
             End If
             G.DrawString(CI.Text, Font, Brushes.Black, X2 + 1, Y + 1)
