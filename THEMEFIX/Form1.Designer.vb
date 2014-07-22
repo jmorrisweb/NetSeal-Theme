@@ -29,6 +29,7 @@ Partial Class Form1
         Dim NsListViewItem1 As NetSeal.NSListView.NSListViewItem = New NetSeal.NSListView.NSListViewItem()
         Dim NsListViewItem2 As NetSeal.NSListView.NSListViewItem = New NetSeal.NSListView.NSListViewItem()
         Dim NsListViewItem3 As NetSeal.NSListView.NSListViewItem = New NetSeal.NSListView.NSListViewItem()
+        Dim NsListViewItem4 As NetSeal.NSListView.NSListViewItem = New NetSeal.NSListView.NSListViewItem()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.NsTheme1 = New NetSeal.NSTheme()
         Me.NsListView1 = New NetSeal.NSListView()
@@ -59,7 +60,7 @@ Partial Class Form1
         Me.NsTheme1.Name = "NsTheme1"
         Me.NsTheme1.NoRounding = False
         Me.NsTheme1.Sizable = True
-        Me.NsTheme1.Size = New System.Drawing.Size(806, 322)
+        Me.NsTheme1.Size = New System.Drawing.Size(806, 424)
         Me.NsTheme1.SmartBounds = True
         Me.NsTheme1.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation
         Me.NsTheme1.TabIndex = 2
@@ -83,13 +84,17 @@ Partial Class Form1
         NsListViewItem3.ImageIndex = -1
         NsListViewItem3.ImageKey = ""
         NsListViewItem3.Text = Nothing
+        NsListViewItem4.ImageIndex = 0
+        NsListViewItem4.ImageKey = ""
+        NsListViewItem4.Text = "BOB"
         Me.NsListView1.Items.Add(NsListViewItem1)
         Me.NsListView1.Items.Add(NsListViewItem2)
         Me.NsListView1.Items.Add(NsListViewItem3)
-        Me.NsListView1.Location = New System.Drawing.Point(23, 41)
+        Me.NsListView1.Items.Add(NsListViewItem4)
+        Me.NsListView1.Location = New System.Drawing.Point(12, 40)
         Me.NsListView1.MultiSelect = True
         Me.NsListView1.Name = "NsListView1"
-        Me.NsListView1.Size = New System.Drawing.Size(771, 244)
+        Me.NsListView1.Size = New System.Drawing.Size(311, 337)
         Me.NsListView1.SmallImageList = Me.ImageList1
         Me.NsListView1.TabIndex = 2
         Me.NsListView1.Text = "NsListView1"
@@ -106,7 +111,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(806, 322)
+        Me.ClientSize = New System.Drawing.Size(806, 424)
         Me.Controls.Add(Me.NsTheme1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Form1"
