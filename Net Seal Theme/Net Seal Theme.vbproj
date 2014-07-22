@@ -68,9 +68,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Theme.vb">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Theme.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -86,7 +84,34 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Theme\NSSeperator.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Theme\NSPaginator.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Theme\NSControlButton.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Theme\NSGroupBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Theme\NSTabControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Theme\NSKeyboard.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Theme\NSOnOffBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Theme\NSComboBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Theme\NSButton.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Theme\NSCheckbox.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Theme\NSHScrollBar.vb">
@@ -94,6 +119,9 @@
     </Compile>
     <Compile Include="Theme\NSColorTable.vb" />
     <Compile Include="Theme\NSContextMenu.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Theme\NSLabel.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Theme\NSListView.vb">
@@ -106,9 +134,28 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Theme\List View Editor %27Don%27t worry about this\Stepitup.vb" />
+    <Compile Include="Theme\NSProgressbar.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Theme\NSRadioButton.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Theme\NSRandomPool.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Theme\NSTextbox.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Theme\NSTheme.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Theme\NSTrackBar.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Theme\NSVScrollbar.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Theme\ThemeModule.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
