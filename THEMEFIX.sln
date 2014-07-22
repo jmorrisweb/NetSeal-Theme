@@ -9,6 +9,12 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Net Seal Theme", "Net Seal 
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Themebase", "Themebase\Themebase.vbproj", "{9AC0DBA8-D5A3-4121-817C-5A0D2D3378B4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Latest Compiled", "Latest Compiled", "{A5E51AB8-51DB-4DA6-9DC5-7BFCB0CAB05E}"
+	ProjectSection(SolutionItems) = preProject
+		Net Seal Theme\bin\Debug\Net Seal Theme.dll = Net Seal Theme\bin\Debug\Net Seal Theme.dll
+		Themebase\bin\Debug\Themebase.dll = Themebase\bin\Debug\Themebase.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
