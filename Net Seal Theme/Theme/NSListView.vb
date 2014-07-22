@@ -372,7 +372,6 @@ Public Class NSListView
                 G.SetClip(R1)
             End If
 
-            'Make sure it has the right ImageList (and reset it if not.)
             If CI.ImageList IsNot Nothing And CI.ImageList Is Me.SmallImageList Then
                 Y2 = R1.Y + CInt((ItemHeight / 2) - (CI.ImageList.ImageSize.Height / 2)) - 1
                 If CI.ImageIndex <> -1 Then
@@ -383,14 +382,12 @@ Public Class NSListView
                     G.DrawImage(CI.ImageList.Images(CI.ImageKey), New Point(3, Y2))
                     X2 = CI.ImageList.ImageSize.Width + 6
                 End If
-            Else
-                Invalidate() 'we need to fix our ImageLists
             End If
             G.DrawString(CI.Text, Font, Brushes.Black, X2 + 1, Y + 1)
             G.DrawString(CI.Text, Font, Brushes.White, X2, Y)
 
-            If CI.SubItems IsNot Nothing Then
-                For I2 As Integer = 0 To Math.Min(CI.SubItems.Count, _Columns.Count) - 1
+            If CI.SubItems IsNot Nothing And Columns.Count > 1 Then
+                For I2 As Integer = 0 To Math.Min(CI.SubItems.Count + 1, _Columns.Count) - 2
                     X = ColumnOffsets(I2 + 1) + 4
 
                     R1.X = X
