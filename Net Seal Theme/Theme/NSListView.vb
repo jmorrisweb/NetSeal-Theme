@@ -397,8 +397,13 @@ Public Class NSListView
     'I am so sorry you have to witness this. I tried warning you. ;.;
 
     Protected Overrides Sub OnPaint(e As PaintEventArgs)
-        If ColumnOffsets Is Nothing Or ColumnOffsets.Count <> Columns.Count Then
+        If ColumnOffsets Is Nothing Then
             InvalidateColumns()
+            Exit Sub
+        End If
+        If ColumnOffsets.Count <> Columns.Count Then
+            InvalidateColumns()
+            Exit Sub
         End If
         Dim TextHeight As Integer = CInt(Graphics.FromHwnd(Handle).MeasureString("@", Font).Height) + 6
         If SmallImageList IsNot Nothing Then

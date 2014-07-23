@@ -26,12 +26,10 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Dim NsListViewColumnHeader1 As NetSeal.NSListView.NSListViewColumnHeader = New NetSeal.NSListView.NSListViewColumnHeader()
         Dim NsListViewColumnHeader2 As NetSeal.NSListView.NSListViewColumnHeader = New NetSeal.NSListView.NSListViewColumnHeader()
-        Dim NsListViewColumnHeader3 As NetSeal.NSListView.NSListViewColumnHeader = New NetSeal.NSListView.NSListViewColumnHeader()
-        Dim NsListViewColumnHeader4 As NetSeal.NSListView.NSListViewColumnHeader = New NetSeal.NSListView.NSListViewColumnHeader()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.NsTheme1 = New NetSeal.NSTheme()
-        Me.NsListView1 = New NetSeal.NSListView()
         Me.NsButton1 = New NetSeal.NSButton()
+        Me.NsListView1 = New NetSeal.NSListView()
         Me.NsTheme1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -66,36 +64,30 @@ Partial Class Form1
         Me.NsTheme1.TransparencyKey = System.Drawing.Color.Empty
         Me.NsTheme1.Transparent = False
         '
-        'NsListView1
-        '
-        NsListViewColumnHeader1.Text = "Test 1"
-        NsListViewColumnHeader1.Width = 60
-        NsListViewColumnHeader2.Text = "Test"
-        NsListViewColumnHeader2.Width = 60
-        NsListViewColumnHeader3.Text = "Test"
-        NsListViewColumnHeader3.Width = 60
-        NsListViewColumnHeader4.Text = Nothing
-        NsListViewColumnHeader4.Width = 60
-        Me.NsListView1.Columns.Add(NsListViewColumnHeader1)
-        Me.NsListView1.Columns.Add(NsListViewColumnHeader2)
-        Me.NsListView1.Columns.Add(NsListViewColumnHeader3)
-        Me.NsListView1.Columns.Add(NsListViewColumnHeader4)
-        Me.NsListView1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.NsListView1.Location = New System.Drawing.Point(0, 0)
-        Me.NsListView1.MultiSelect = True
-        Me.NsListView1.Name = "NsListView1"
-        Me.NsListView1.Size = New System.Drawing.Size(311, 319)
-        Me.NsListView1.SmallImageList = Me.ImageList1
-        Me.NsListView1.TabIndex = 2
-        Me.NsListView1.Text = "NsListView1"
-        '
         'NsButton1
         '
-        Me.NsButton1.Location = New System.Drawing.Point(246, 325)
+        Me.NsButton1.Location = New System.Drawing.Point(246, 361)
         Me.NsButton1.Name = "NsButton1"
         Me.NsButton1.Size = New System.Drawing.Size(53, 23)
         Me.NsButton1.TabIndex = 1
         Me.NsButton1.Text = "Debug"
+        '
+        'NsListView1
+        '
+        NsListViewColumnHeader1.Text = "Test 1"
+        NsListViewColumnHeader1.Width = 60
+        NsListViewColumnHeader2.Text = "Test 2"
+        NsListViewColumnHeader2.Width = 60
+        Me.NsListView1.Columns.Add(NsListViewColumnHeader1)
+        Me.NsListView1.Columns.Add(NsListViewColumnHeader2)
+        Me.NsListView1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.NsListView1.Location = New System.Drawing.Point(0, 0)
+        Me.NsListView1.MultiSelect = True
+        Me.NsListView1.Name = "NsListView1"
+        Me.NsListView1.Size = New System.Drawing.Size(311, 355)
+        Me.NsListView1.SmallImageList = Nothing
+        Me.NsListView1.TabIndex = 2
+        Me.NsListView1.Text = "NsListView1"
         '
         'Form1
         '
