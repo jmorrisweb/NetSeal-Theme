@@ -17,22 +17,68 @@ Public Class NSListView
         Public Sub New(Parent As NSListView)
             Me.Parent = Parent
         End Sub
-        Public Shadows Sub Add(Item As String)
-            Dim TempAdd_ As New NSListViewItem
-            If Me.Parent.SmallImageList IsNot Nothing Then
-                TempAdd_.ImageList_ = Me.Parent.SmallImageList
-            End If
-            TempAdd_.Text = Item
-            MyBase.Add(TempAdd_)
-            Parent.InvalidateScroll()
-        End Sub
+#Region "Add Subs"
         Public Shadows Sub Add(Item As NSListViewItem)
-                If Me.Parent.SmallImageList IsNot Nothing Then
-                    Item.ImageList_ = Me.Parent.SmallImageList
-                End If
-                MyBase.Add(Item)
+            If Me.Parent.SmallImageList IsNot Nothing Then
+                Item.ImageList_ = Me.Parent.SmallImageList
+            End If
+            MyBase.Add(Item)
             Parent.InvalidateScroll()
         End Sub
+
+        Public Shadows Sub Add(Item As String)
+            Dim TempAdd As New NSListViewItem
+            TempAdd.Text = Item
+            If Me.Parent.SmallImageList IsNot Nothing Then
+                TempAdd.ImageList_ = Me.Parent.SmallImageList
+            End If
+            MyBase.Add(TempAdd)
+            Parent.InvalidateScroll()
+        End Sub
+
+        Public Shadows Sub Add(Text As String, ParamArray SubItems As String())
+            Dim TempAdd As New NSListViewItem
+            TempAdd.Text = Text
+            For Each SubItem In SubItems
+                Dim SubTempAdd As New NSListViewSubItem
+                SubTempAdd.Text = SubItem
+                TempAdd.SubItems.Add(SubTempAdd)
+            Next
+            MyBase.Add(TempAdd)
+            Parent.InvalidateScroll()
+        End Sub
+
+        Public Shadows Sub Add(Item As String, ImageIndex As Integer)
+            Dim TempAdd As New NSListViewItem
+            TempAdd.Text = Item
+            If Me.Parent.SmallImageList IsNot Nothing Then
+                TempAdd.ImageList_ = Me.Parent.SmallImageList
+                If ImageIndex < TempAdd.ImageList.Images.Count And ImageIndex > -1 Then
+                    TempAdd.ImageIndex = ImageIndex
+                End If
+            End If
+            MyBase.Add(TempAdd)
+            Parent.InvalidateScroll()
+        End Sub
+
+        Public Shadows Sub Add(Text As String, ImageIndex As Integer, ParamArray SubItems As String())
+            Dim TempAdd As New NSListViewItem
+            TempAdd.Text = Text
+            If Me.Parent.SmallImageList IsNot Nothing Then
+                TempAdd.ImageList_ = Me.Parent.SmallImageList
+                If ImageIndex < TempAdd.ImageList.Images.Count And ImageIndex > -1 Then
+                    TempAdd.ImageIndex = ImageIndex
+                End If
+            End If
+            For Each SubItem In SubItems
+                Dim SubTempAdd As New NSListViewSubItem
+                SubTempAdd.Text = SubItem
+                TempAdd.SubItems.Add(SubTempAdd)
+            Next
+            MyBase.Add(TempAdd)
+            Parent.InvalidateScroll()
+        End Sub
+#End Region
         Public Shadows Sub AddRange(Range As List(Of NSListViewItem))
             If Me.Parent.SmallImageList IsNot Nothing Then
                 For Each NSListViewItem In Range
@@ -70,6 +116,7 @@ Public Class NSListView
         Private ImageIndex_ As Integer = -1
         'Friend Fields
         Friend ImageList_ As ImageList
+        Public Property Tag As Object
         <BrowsableAttribute(False)> _
         Public ReadOnly Property ImageList As ImageList
             Get
@@ -110,10 +157,7 @@ Public Class NSListView
         Sub New()
             UniqueId = Guid.NewGuid()
         End Sub
-        Friend Sub New(Imagelist As ImageList)
-            UniqueId = Guid.NewGuid()
-            ImageList_ = Imagelist
-        End Sub
+
 
         Public Overrides Function ToString() As String
             Return Text
