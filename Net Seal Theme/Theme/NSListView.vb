@@ -150,7 +150,7 @@ Public Class NSListView
         End Property
         Property Text As String
         <DesignerSerializationVisibility(DesignerSerializationVisibility.Content)> _
-        Property SubItems As New List(Of NSListViewSubItem)
+        Property SubItems As New NSListViewSubItemCollection()
 
         Protected UniqueId As Guid
 
@@ -171,6 +171,18 @@ Public Class NSListView
             Return False
         End Function
 
+    End Class
+
+    Public Class NSListViewSubItemCollection
+        Inherits List(Of NSListViewSubItem)
+        Public Shadows Sub Add(Item As NSListViewSubItem)
+            MyBase.Add(Item)
+        End Sub
+        Public Shadows Sub Add(Text As String)
+            Dim Temp As New NSListViewSubItem
+            Temp.Text = Text
+            MyBase.Add(Temp)
+        End Sub
     End Class
 
     Public Class NSListViewSubItem
