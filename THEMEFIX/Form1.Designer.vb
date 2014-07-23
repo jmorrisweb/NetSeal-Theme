@@ -26,10 +26,12 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Dim NsListViewColumnHeader1 As NetSeal.NSListView.NSListViewColumnHeader = New NetSeal.NSListView.NSListViewColumnHeader()
         Dim NsListViewColumnHeader2 As NetSeal.NSListView.NSListViewColumnHeader = New NetSeal.NSListView.NSListViewColumnHeader()
+        Dim NsListViewColumnHeader3 As NetSeal.NSListView.NSListViewColumnHeader = New NetSeal.NSListView.NSListViewColumnHeader()
+        Dim NsListViewColumnHeader4 As NetSeal.NSListView.NSListViewColumnHeader = New NetSeal.NSListView.NSListViewColumnHeader()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.NsTheme1 = New NetSeal.NSTheme()
-        Me.NsButton1 = New NetSeal.NSButton()
         Me.NsListView1 = New NetSeal.NSListView()
+        Me.NsButton1 = New NetSeal.NSButton()
         Me.NsTheme1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -45,8 +47,8 @@ Partial Class Form1
         Me.NsTheme1.AccentOffset = 42
         Me.NsTheme1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.NsTheme1.BorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.NsTheme1.Controls.Add(Me.NsButton1)
         Me.NsTheme1.Controls.Add(Me.NsListView1)
+        Me.NsTheme1.Controls.Add(Me.NsButton1)
         Me.NsTheme1.Customization = ""
         Me.NsTheme1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.NsTheme1.Font = New System.Drawing.Font("Verdana", 8.0!)
@@ -64,28 +66,36 @@ Partial Class Form1
         Me.NsTheme1.TransparencyKey = System.Drawing.Color.Empty
         Me.NsTheme1.Transparent = False
         '
+        'NsListView1
+        '
+        NsListViewColumnHeader1.Text = "Test 1"
+        NsListViewColumnHeader1.Width = 60
+        NsListViewColumnHeader2.Text = "Test"
+        NsListViewColumnHeader2.Width = 60
+        NsListViewColumnHeader3.Text = "Test"
+        NsListViewColumnHeader3.Width = 60
+        NsListViewColumnHeader4.Text = Nothing
+        NsListViewColumnHeader4.Width = 60
+        Me.NsListView1.Columns.Add(NsListViewColumnHeader1)
+        Me.NsListView1.Columns.Add(NsListViewColumnHeader2)
+        Me.NsListView1.Columns.Add(NsListViewColumnHeader3)
+        Me.NsListView1.Columns.Add(NsListViewColumnHeader4)
+        Me.NsListView1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.NsListView1.Location = New System.Drawing.Point(0, 0)
+        Me.NsListView1.MultiSelect = True
+        Me.NsListView1.Name = "NsListView1"
+        Me.NsListView1.Size = New System.Drawing.Size(311, 319)
+        Me.NsListView1.SmallImageList = Me.ImageList1
+        Me.NsListView1.TabIndex = 2
+        Me.NsListView1.Text = "NsListView1"
+        '
         'NsButton1
         '
-        Me.NsButton1.Location = New System.Drawing.Point(244, 364)
+        Me.NsButton1.Location = New System.Drawing.Point(246, 325)
         Me.NsButton1.Name = "NsButton1"
         Me.NsButton1.Size = New System.Drawing.Size(53, 23)
         Me.NsButton1.TabIndex = 1
         Me.NsButton1.Text = "Debug"
-        '
-        'NsListView1
-        '
-        NsListViewColumnHeader1.Text = "C 1"
-        NsListViewColumnHeader1.Width = 120
-        NsListViewColumnHeader2.Text = "C 2"
-        NsListViewColumnHeader2.Width = 120
-        Me.NsListView1.Columns = New NetSeal.NSListView.NSListViewColumnHeader() {NsListViewColumnHeader1, NsListViewColumnHeader2}
-        Me.NsListView1.Location = New System.Drawing.Point(12, 43)
-        Me.NsListView1.MultiSelect = True
-        Me.NsListView1.Name = "NsListView1"
-        Me.NsListView1.Size = New System.Drawing.Size(285, 315)
-        Me.NsListView1.SmallImageList = Me.ImageList1
-        Me.NsListView1.TabIndex = 0
-        Me.NsListView1.Text = "NsListView1"
         '
         'Form1
         '
@@ -102,6 +112,6 @@ Partial Class Form1
     End Sub
     Friend WithEvents NsTheme1 As NetSeal.NSTheme
     Friend WithEvents NsButton1 As NetSeal.NSButton
-    Friend WithEvents NsListView1 As NetSeal.NSListView
     Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
+    Friend WithEvents NsListView1 As NetSeal.NSListView
 End Class

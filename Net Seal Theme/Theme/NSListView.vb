@@ -192,10 +192,49 @@ Public Class NSListView
             Return Text
         End Function
     End Class
-
+    Public Class NSListViewColumnHeaderCollection
+        Inherits List(Of NSListViewColumnHeader)
+        Private Owner As NSListView
+        Public Sub New(Owner As NSListView)
+            Me.Owner = Owner
+        End Sub
+        Public ReadOnly Property Length As Integer
+            Get
+                Return MyBase.Count
+            End Get
+        End Property
+        Public Shadows Sub Add(Item As NSListViewColumnHeader)
+            Item.owner = Me.Owner
+            MyBase.Add(Item)
+            Owner.InvalidateColumns()
+        End Sub
+    End Class
     Public Class NSListViewColumnHeader
+        Private width_ As Integer = 60
+        Private text_ As String = String.Empty
+        Friend owner As NSListView
         Property Text As String
-        Property Width As Integer = 60
+            Get
+                Return text_
+            End Get
+            Set(value As String)
+                text_ = value
+                If owner IsNot Nothing Then
+                    owner.InvalidateColumns()
+                End If
+            End Set
+        End Property
+        Property Width As Integer
+            Get
+                Return width_
+            End Get
+            Set(value As Integer)
+                width_ = value
+                If owner IsNot Nothing Then
+                    owner.InvalidateColumns()
+                End If
+            End Set
+        End Property
 
         Public Overrides Function ToString() As String
             Return Text
@@ -219,14 +258,14 @@ Public Class NSListView
         End Get
     End Property
 
-    Private _Columns As New List(Of NSListViewColumnHeader)
+    Private _Columns As New NSListViewColumnHeaderCollection(Me)
     <DesignerSerializationVisibility(DesignerSerializationVisibility.Content)> _
-    Public Property Columns() As NSListViewColumnHeader()
+    Public Property Columns() As NSListViewColumnHeaderCollection
         Get
-            Return _Columns.ToArray()
+            Return _Columns
         End Get
-        Set(ByVal value As NSListViewColumnHeader())
-            _Columns = New List(Of NSListViewColumnHeader)(value)
+        Set(ByVal value As NSListViewColumnHeaderCollection)
+            _Columns = value
             InvalidateColumns()
         End Set
     End Property
@@ -307,9 +346,9 @@ Public Class NSListView
     Private ColumnOffsets As Integer()
     Private Sub InvalidateColumns()
         Dim Width As Integer = 3
-        ColumnOffsets = New Integer(_Columns.Count - 1) {}
+        ColumnOffsets = New Integer(Columns.Count - 1) {}
 
-        For I As Integer = 0 To _Columns.Count - 1
+        For I As Integer = 0 To Columns.Count - 1
             ColumnOffsets(I) = Width
             Width += Columns(I).Width
         Next
@@ -358,6 +397,9 @@ Public Class NSListView
     'I am so sorry you have to witness this. I tried warning you. ;.;
 
     Protected Overrides Sub OnPaint(e As PaintEventArgs)
+        If ColumnOffsets Is Nothing Or ColumnOffsets.Count <> Columns.Count Then
+            InvalidateColumns()
+        End If
         Dim TextHeight As Integer = CInt(Graphics.FromHwnd(Handle).MeasureString("@", Font).Height) + 6
         If SmallImageList IsNot Nothing Then
             If SmallImageList.ImageSize.Height >= TextHeight Then
@@ -374,10 +416,10 @@ Public Class NSListView
                     VS.Maximum = (_Items.Count * ItemHeight)
                 End If
                 If VS.SmallChange <> ItemHeight Then
-                    'VS.SmallChange = ItemHeight
+                    VS.SmallChange = ItemHeight
                 End If
                 If VS.LargeChange <> ItemHeight Then
-                    'VS.LargeChange = ItemHeight
+                    VS.LargeChange = ItemHeight
                 End If
             End If
 
