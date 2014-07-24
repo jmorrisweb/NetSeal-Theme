@@ -525,9 +525,8 @@ Public Class NSListView
 
                     If Columns(I2 + 1).ShowCheckBox Then
                         Dim Padding As SizeF = G.MeasureString(CI.SubItems(I2).Text, Font)
-                        CI.SubItems(I2).checkbox_.Location = New Point(X + 3 + CInt(Padding.Width), Y)
+                        CI.SubItems(I2).checkbox_.Location = New Point(X + 5 + CInt(Padding.Width), Y - CInt(CI.SubItems(I2).checkbox_.Height / 4))
                         CI.SubItems(I2).checkbox_.Draw(G)
-                        'G.DrawString(CI.SubItems(I2).checkbox_.Text, Font, Brushes.AliceBlue, New Point(X + 3 + CInt(Padding.Width), Y))
                     End If
                 Next
             End If

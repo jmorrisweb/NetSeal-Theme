@@ -37,7 +37,6 @@ Partial Class Form1
         Me.NsTheme1 = New NetSeal.NSTheme()
         Me.NsListView1 = New NetSeal.NSListView()
         Me.NsButton1 = New NetSeal.NSButton()
-        Me.NsCheckBox1 = New NetSeal.NSCheckBox()
         Me.NsTheme1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -53,7 +52,6 @@ Partial Class Form1
         Me.NsTheme1.AccentOffset = 42
         Me.NsTheme1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.NsTheme1.BorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.NsTheme1.Controls.Add(Me.NsCheckBox1)
         Me.NsTheme1.Controls.Add(Me.NsListView1)
         Me.NsTheme1.Controls.Add(Me.NsButton1)
         Me.NsTheme1.Customization = ""
@@ -108,7 +106,7 @@ Partial Class Form1
         Me.NsListView1.Location = New System.Drawing.Point(12, 36)
         Me.NsListView1.MultiSelect = True
         Me.NsListView1.Name = "NsListView1"
-        Me.NsListView1.Size = New System.Drawing.Size(751, 269)
+        Me.NsListView1.Size = New System.Drawing.Size(751, 317)
         Me.NsListView1.SmallImageList = Me.ImageList1
         Me.NsListView1.TabIndex = 2
         Me.NsListView1.Text = "NsListView1"
@@ -120,15 +118,6 @@ Partial Class Form1
         Me.NsButton1.Size = New System.Drawing.Size(53, 23)
         Me.NsButton1.TabIndex = 1
         Me.NsButton1.Text = "Debug"
-        '
-        'NsCheckBox1
-        '
-        Me.NsCheckBox1.Checked = True
-        Me.NsCheckBox1.Location = New System.Drawing.Point(660, 316)
-        Me.NsCheckBox1.Name = "NsCheckBox1"
-        Me.NsCheckBox1.Size = New System.Drawing.Size(103, 37)
-        Me.NsCheckBox1.TabIndex = 3
-        Me.NsCheckBox1.Text = "NsCheckBox1"
         '
         'Form1
         '
@@ -147,5 +136,4 @@ Partial Class Form1
     Friend WithEvents NsButton1 As NetSeal.NSButton
     Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
     Friend WithEvents NsListView1 As NetSeal.NSListView
-    Friend WithEvents NsCheckBox1 As NetSeal.NSCheckBox
 End Class
