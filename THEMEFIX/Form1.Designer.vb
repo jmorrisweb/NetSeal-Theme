@@ -30,10 +30,14 @@ Partial Class Form1
         Dim NsListViewItem1 As NetSeal.NSListView.NSListViewItem = New NetSeal.NSListView.NSListViewItem()
         Dim NsListViewSubItem1 As NetSeal.NSListView.NSListViewSubItem = New NetSeal.NSListView.NSListViewSubItem()
         Dim NsListViewSubItem2 As NetSeal.NSListView.NSListViewSubItem = New NetSeal.NSListView.NSListViewSubItem()
+        Dim NsListViewItem2 As NetSeal.NSListView.NSListViewItem = New NetSeal.NSListView.NSListViewItem()
+        Dim NsListViewSubItem3 As NetSeal.NSListView.NSListViewSubItem = New NetSeal.NSListView.NSListViewSubItem()
+        Dim NsListViewSubItem4 As NetSeal.NSListView.NSListViewSubItem = New NetSeal.NSListView.NSListViewSubItem()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.NsTheme1 = New NetSeal.NSTheme()
         Me.NsListView1 = New NetSeal.NSListView()
         Me.NsButton1 = New NetSeal.NSButton()
+        Me.NsCheckBox1 = New NetSeal.NSCheckBox()
         Me.NsTheme1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -49,6 +53,7 @@ Partial Class Form1
         Me.NsTheme1.AccentOffset = 42
         Me.NsTheme1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.NsTheme1.BorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.NsTheme1.Controls.Add(Me.NsCheckBox1)
         Me.NsTheme1.Controls.Add(Me.NsListView1)
         Me.NsTheme1.Controls.Add(Me.NsButton1)
         Me.NsTheme1.Customization = ""
@@ -73,7 +78,7 @@ Partial Class Form1
         NsListViewColumnHeader1.ShowCheckBox = False
         NsListViewColumnHeader1.Text = "Test"
         NsListViewColumnHeader1.Width = 60
-        NsListViewColumnHeader2.ShowCheckBox = True
+        NsListViewColumnHeader2.ShowCheckBox = False
         NsListViewColumnHeader2.Text = "Test 2"
         NsListViewColumnHeader2.Width = 300
         NsListViewColumnHeader3.ShowCheckBox = True
@@ -90,22 +95,40 @@ Partial Class Form1
         NsListViewItem1.SubItems.Add(NsListViewSubItem2)
         NsListViewItem1.Tag = Nothing
         NsListViewItem1.Text = "Test"
+        NsListViewItem2.ImageIndex = -1
+        NsListViewItem2.ImageKey = ""
+        NsListViewSubItem3.Text = Nothing
+        NsListViewSubItem4.Text = "TTT"
+        NsListViewItem2.SubItems.Add(NsListViewSubItem3)
+        NsListViewItem2.SubItems.Add(NsListViewSubItem4)
+        NsListViewItem2.Tag = Nothing
+        NsListViewItem2.Text = Nothing
         Me.NsListView1.Items.Add(NsListViewItem1)
+        Me.NsListView1.Items.Add(NsListViewItem2)
         Me.NsListView1.Location = New System.Drawing.Point(12, 36)
         Me.NsListView1.MultiSelect = True
         Me.NsListView1.Name = "NsListView1"
-        Me.NsListView1.Size = New System.Drawing.Size(751, 176)
+        Me.NsListView1.Size = New System.Drawing.Size(751, 269)
         Me.NsListView1.SmallImageList = Me.ImageList1
         Me.NsListView1.TabIndex = 2
         Me.NsListView1.Text = "NsListView1"
         '
         'NsButton1
         '
-        Me.NsButton1.Location = New System.Drawing.Point(456, 361)
+        Me.NsButton1.Location = New System.Drawing.Point(710, 359)
         Me.NsButton1.Name = "NsButton1"
         Me.NsButton1.Size = New System.Drawing.Size(53, 23)
         Me.NsButton1.TabIndex = 1
         Me.NsButton1.Text = "Debug"
+        '
+        'NsCheckBox1
+        '
+        Me.NsCheckBox1.Checked = True
+        Me.NsCheckBox1.Location = New System.Drawing.Point(660, 316)
+        Me.NsCheckBox1.Name = "NsCheckBox1"
+        Me.NsCheckBox1.Size = New System.Drawing.Size(103, 37)
+        Me.NsCheckBox1.TabIndex = 3
+        Me.NsCheckBox1.Text = "NsCheckBox1"
         '
         'Form1
         '
@@ -124,4 +147,5 @@ Partial Class Form1
     Friend WithEvents NsButton1 As NetSeal.NSButton
     Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
     Friend WithEvents NsListView1 As NetSeal.NSListView
+    Friend WithEvents NsCheckBox1 As NetSeal.NSCheckBox
 End Class

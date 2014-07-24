@@ -186,8 +186,21 @@ Public Class NSListView
     End Class
 
     Public Class NSListViewSubItem
+        Friend checkbox_ As NSCheckBox
         Property Text As String
-        Public Property Checkbox As New CheckBox
+        Public Sub New()
+            checkbox_ = New NSCheckBox
+            checkbox_.Height = 30
+            checkbox_.Width = 20
+            checkbox_.Text = "TEST"
+            checkbox_.Visible = True
+            checkbox_.Checked = True
+        End Sub
+        Public ReadOnly Property Checkbox As NSCheckBox
+            Get
+                Return checkbox_
+            End Get
+        End Property
         Public Overrides Function ToString() As String
             Return Text
         End Function
@@ -512,11 +525,12 @@ Public Class NSListView
 
                     If Columns(I2 + 1).ShowCheckBox Then
                         Dim Padding As SizeF = G.MeasureString(CI.SubItems(I2).Text, Font)
-                        G.DrawString("I am DRAWN", Font, Brushes.AliceBlue, X + 3 + Padding.Width, Y)
+                        CI.SubItems(I2).checkbox_.Location = New Point(X + 3 + CInt(Padding.Width), Y)
+                        CI.SubItems(I2).checkbox_.Draw(G)
+                        'G.DrawString(CI.SubItems(I2).checkbox_.Text, Font, Brushes.AliceBlue, New Point(X + 3 + CInt(Padding.Width), Y))
                     End If
                 Next
             End If
-
             G.ResetClip()
         Next
 

@@ -56,6 +56,29 @@ Public Class NSCheckBox
         G.DrawString(Text, Font, Brushes.Black, PT1.X + 1, PT1.Y + 1)
         G.DrawString(Text, Font, Brushes.White, PT1)
     End Sub
+
+    Friend Sub Draw(G As Graphics)
+        G.SmoothingMode = SmoothingMode.AntiAlias
+        GP1 = CreateRound(Me.Location.X, Me.Location.Y + 2, Height - 5, Height - 5, 5)
+        GP2 = CreateRound(Me.Location.X + 1, Me.Location.Y + 3, Height - 7, Height - 7, 5)
+        PB1 = New PathGradientBrush(GP1)
+        PB1.CenterColor = Color.FromArgb(50, 50, 50)
+        PB1.SurroundColors = {Color.FromArgb(45, 45, 45)}
+        PB1.FocusScales = New PointF(Me.Location.X + 0.3F, Me.Location.Y + 0.3F)
+        G.FillPath(PB1, GP1)
+        G.DrawPath(P11, GP1)
+        G.DrawPath(P22, GP2)
+        If _Checked Then
+            G.DrawLine(P3, Me.Location.X + 5, Me.Location.Y + Height - 9, Me.Location.X + 8, Me.Location.Y + Height - 7)
+
+            G.DrawLine(P3, Me.Location.X + 7, Me.Location.Y + Height - 7, Me.Location.X + Height - 8, Me.Location.Y + 7)
+
+            G.DrawLine(P4, Me.Location.X + 4, Me.Location.Y + Height - 10, Me.Location.X + 7, Me.Location.Y + Height - 8)
+
+            G.DrawLine(P4, Me.Location.X + 6, Me.Location.Y + Height - 8, Me.Location.X + Height - 9, Me.Location.Y + 6)
+        End If
+    End Sub
+
     Protected Overrides Sub OnMouseDown(e As MouseEventArgs)
         Checked = Not Checked
     End Sub
