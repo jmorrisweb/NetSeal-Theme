@@ -6,4 +6,8 @@
             NsListView1.Items.Add(text, 0, "Sub Item Test", "Sub Item 2 Test")
         Next
     End Sub
+
+    Private Sub NsListView1_Click(sender As Object, e As EventArgs) Handles NsListView1.Click
+
+    End Sub
 End Class

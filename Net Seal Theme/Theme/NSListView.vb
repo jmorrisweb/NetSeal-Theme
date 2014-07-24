@@ -504,13 +504,15 @@ Public Class NSListView
                         X = ColumnOffsets(I2 + 1) + 4
                     End If
                     R1.X = X
-                    R1.Width = Columns(I2).Width
+                    R1.Width = Columns(I2 + 1).Width
                     G.SetClip(R1)
 
                     G.DrawString(CI.SubItems(I2).Text, Font, Brushes.Black, X + 1, Y + 1)
                     G.DrawString(CI.SubItems(I2).Text, Font, Brushes.White, X, Y)
-                    If Columns(I2).ShowCheckBox Then
-                        G.DrawString("WQOOT", Font, Brushes.AliceBlue, X + 5, Y)
+
+                    If Columns(I2 + 1).ShowCheckBox Then
+                        Dim Padding As SizeF = G.MeasureString(CI.SubItems(I2).Text, Font)
+                        G.DrawString("I am DRAWN", Font, Brushes.AliceBlue, X + 3 + Padding.Width, Y)
                     End If
                 Next
             End If

@@ -60,7 +60,7 @@ Partial Class Form1
         Me.NsTheme1.Name = "NsTheme1"
         Me.NsTheme1.NoRounding = False
         Me.NsTheme1.Sizable = True
-        Me.NsTheme1.Size = New System.Drawing.Size(521, 394)
+        Me.NsTheme1.Size = New System.Drawing.Size(775, 394)
         Me.NsTheme1.SmartBounds = True
         Me.NsTheme1.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation
         Me.NsTheme1.TabIndex = 0
@@ -73,12 +73,12 @@ Partial Class Form1
         NsListViewColumnHeader1.ShowCheckBox = False
         NsListViewColumnHeader1.Text = "Test"
         NsListViewColumnHeader1.Width = 60
-        NsListViewColumnHeader2.ShowCheckBox = False
+        NsListViewColumnHeader2.ShowCheckBox = True
         NsListViewColumnHeader2.Text = "Test 2"
-        NsListViewColumnHeader2.Width = 60
-        NsListViewColumnHeader3.ShowCheckBox = False
+        NsListViewColumnHeader2.Width = 300
+        NsListViewColumnHeader3.ShowCheckBox = True
         NsListViewColumnHeader3.Text = "Test 3"
-        NsListViewColumnHeader3.Width = 60
+        NsListViewColumnHeader3.Width = 150
         Me.NsListView1.Columns.Add(NsListViewColumnHeader1)
         Me.NsListView1.Columns.Add(NsListViewColumnHeader2)
         Me.NsListView1.Columns.Add(NsListViewColumnHeader3)
@@ -94,7 +94,7 @@ Partial Class Form1
         Me.NsListView1.Location = New System.Drawing.Point(12, 36)
         Me.NsListView1.MultiSelect = True
         Me.NsListView1.Name = "NsListView1"
-        Me.NsListView1.Size = New System.Drawing.Size(497, 176)
+        Me.NsListView1.Size = New System.Drawing.Size(751, 176)
         Me.NsListView1.SmallImageList = Me.ImageList1
         Me.NsListView1.TabIndex = 2
         Me.NsListView1.Text = "NsListView1"
@@ -111,7 +111,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(521, 394)
+        Me.ClientSize = New System.Drawing.Size(775, 394)
         Me.Controls.Add(Me.NsTheme1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Form1"
