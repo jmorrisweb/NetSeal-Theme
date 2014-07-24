@@ -116,6 +116,7 @@ Public Class NSListView
         Private ImageIndex_ As Integer = -1
         'Friend Fields
         Friend ImageList_ As ImageList
+        Friend Checkbox As New NSCheckBox
         Public Property Tag As Object
         <BrowsableAttribute(False)> _
         Public ReadOnly Property ImageList As ImageList
@@ -123,7 +124,7 @@ Public Class NSListView
                 Return ImageList_
             End Get
         End Property
-
+        Public Property Checked As Boolean
         <TypeConverterAttribute(GetType(ImageKeyConverter))> _
         Public Property ImageKey As String
             Get
@@ -156,8 +157,8 @@ Public Class NSListView
 
         Sub New()
             UniqueId = Guid.NewGuid()
+            Checkbox.Text = String.Empty
         End Sub
-
 
         Public Overrides Function ToString() As String
             Return Text
@@ -186,21 +187,7 @@ Public Class NSListView
     End Class
 
     Public Class NSListViewSubItem
-        Friend checkbox_ As NSCheckBox
         Property Text As String
-        Public Sub New()
-            checkbox_ = New NSCheckBox
-            checkbox_.Height = 30
-            checkbox_.Width = 20
-            checkbox_.Text = "TEST"
-            checkbox_.Visible = True
-            checkbox_.Checked = True
-        End Sub
-        Public ReadOnly Property Checkbox As NSCheckBox
-            Get
-                Return checkbox_
-            End Get
-        End Property
         Public Overrides Function ToString() As String
             Return Text
         End Function
@@ -227,7 +214,6 @@ Public Class NSListView
         Private width_ As Integer = 60
         Private text_ As String = String.Empty
         Friend owner As NSListView
-        Public Property ShowCheckBox As Boolean
         Property Text As String
             Get
                 Return text_
@@ -522,12 +508,6 @@ Public Class NSListView
 
                     G.DrawString(CI.SubItems(I2).Text, Font, Brushes.Black, X + 1, Y + 1)
                     G.DrawString(CI.SubItems(I2).Text, Font, Brushes.White, X, Y)
-
-                    If Columns(I2 + 1).ShowCheckBox Then
-                        Dim Padding As SizeF = G.MeasureString(CI.SubItems(I2).Text, Font)
-                        CI.SubItems(I2).checkbox_.Location = New Point(X + 5 + CInt(Padding.Width), Y - CInt(CI.SubItems(I2).checkbox_.Height / 4))
-                        CI.SubItems(I2).checkbox_.Draw(G)
-                    End If
                 Next
             End If
             G.ResetClip()

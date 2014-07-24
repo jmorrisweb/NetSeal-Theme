@@ -73,18 +73,16 @@ Partial Class Form1
         '
         'NsListView1
         '
-        NsListViewColumnHeader1.ShowCheckBox = False
         NsListViewColumnHeader1.Text = "Test"
         NsListViewColumnHeader1.Width = 60
-        NsListViewColumnHeader2.ShowCheckBox = False
         NsListViewColumnHeader2.Text = "Test 2"
         NsListViewColumnHeader2.Width = 300
-        NsListViewColumnHeader3.ShowCheckBox = True
         NsListViewColumnHeader3.Text = "Test 3"
         NsListViewColumnHeader3.Width = 150
         Me.NsListView1.Columns.Add(NsListViewColumnHeader1)
         Me.NsListView1.Columns.Add(NsListViewColumnHeader2)
         Me.NsListView1.Columns.Add(NsListViewColumnHeader3)
+        NsListViewItem1.Checked = True
         NsListViewItem1.ImageIndex = -1
         NsListViewItem1.ImageKey = ""
         NsListViewSubItem1.Text = "Test"
@@ -93,6 +91,7 @@ Partial Class Form1
         NsListViewItem1.SubItems.Add(NsListViewSubItem2)
         NsListViewItem1.Tag = Nothing
         NsListViewItem1.Text = "Test"
+        NsListViewItem2.Checked = False
         NsListViewItem2.ImageIndex = -1
         NsListViewItem2.ImageKey = ""
         NsListViewSubItem3.Text = Nothing
