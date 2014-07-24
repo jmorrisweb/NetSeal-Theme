@@ -187,7 +187,7 @@ Public Class NSListView
 
     Public Class NSListViewSubItem
         Property Text As String
-
+        Public Property Checkbox As New CheckBox
         Public Overrides Function ToString() As String
             Return Text
         End Function
@@ -195,6 +195,7 @@ Public Class NSListView
     Public Class NSListViewColumnHeaderCollection
         Inherits List(Of NSListViewColumnHeader)
         Private Owner As NSListView
+
         Public Sub New(Owner As NSListView)
             Me.Owner = Owner
         End Sub
@@ -213,6 +214,7 @@ Public Class NSListView
         Private width_ As Integer = 60
         Private text_ As String = String.Empty
         Friend owner As NSListView
+        Public Property ShowCheckBox As Boolean
         Property Text As String
             Get
                 Return text_
@@ -497,15 +499,19 @@ Public Class NSListView
             G.DrawString(CI.Text, Font, Brushes.White, X2, Y)
 
             If CI.SubItems IsNot Nothing And Columns.Count > 1 Then
-                For I2 As Integer = 0 To Math.Min(CI.SubItems.Count + 1, _Columns.Count) - 2
-                    X = ColumnOffsets(I2 + 1) + 4
-
+                For I2 As Integer = 0 To Math.Min(CI.SubItems.Count, _Columns.Count) - 1
+                    If I2 <> _Columns.Count - 1 Then
+                        X = ColumnOffsets(I2 + 1) + 4
+                    End If
                     R1.X = X
                     R1.Width = Columns(I2).Width
                     G.SetClip(R1)
 
                     G.DrawString(CI.SubItems(I2).Text, Font, Brushes.Black, X + 1, Y + 1)
                     G.DrawString(CI.SubItems(I2).Text, Font, Brushes.White, X, Y)
+                    If Columns(I2).ShowCheckBox Then
+                        G.DrawString("WQOOT", Font, Brushes.AliceBlue, X + 5, Y)
+                    End If
                 Next
             End If
 
